@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Material Categories - PilahSampah')
+@section('title', 'Material Categories - WasteWise')
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-4">

@@ -68,7 +68,7 @@
     <div class="register-container bg-white p-5 rounded shadow-lg" style="width: 100%; max-width: 400px;">
         <div class="register-header text-center mb-4">
             <h2 class="text-success">Register</h2>
-            <p class="text-muted">Daftar PILASAKI'</p>
+            <p class="text-muted">Daftar WasteWise</p>
         </div>
         <form class="register-form" method="POST" action="{{ route('register') }}">
             @csrf

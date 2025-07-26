@@ -1,4 +1,4 @@
-# PILASAKI'
+# WasteWise
 Finalis of ICONIC 2024
 ![Top Image](README/top.jpg)
 

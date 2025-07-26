@@ -4,7 +4,7 @@
 $host = '127.0.0.1';
 $username = 'root';
 $password = '';
-$database = 'pisah';
+$database = 'wastewise';
 
 try {
     // Connect to MySQL without selecting database

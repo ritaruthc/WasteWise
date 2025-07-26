@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Edukasi Pemilahan Sampah')</title>
+    <title>@yield('title', 'WasteWise - Smart Waste Management')</title>
     <link rel="icon" href="{{ asset('icon.png') }}" type="image/png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
@@ -109,8 +109,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <img src="{{ asset('images/logo.png') }}" alt="PilahSampah" width="32" height="32">
-            <a class="navbar-brand" href="{{ route('home') }}">PILASAKI'</a>
+            <img src="{{ asset('images/logo.png') }}" alt="WasteWise" width="32" height="32">
+            <a class="navbar-brand" href="{{ route('home') }}">WasteWise</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -205,7 +205,7 @@
     </div>
 
     <footer class="footer">
-        <p>&copy; 2024 PilahSampahKita. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2024 WasteWise. Hak Cipta Dilindungi.</p>
     </footer>
 
     <!-- Crop Image Modal -->
