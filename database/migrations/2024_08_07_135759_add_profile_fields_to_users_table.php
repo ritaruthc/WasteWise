@@ -10,7 +10,7 @@ class AddProfileFieldsToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('avatar')->nullable()->after('password');
-            $table->text('bio')->nullable()->after('avatar');
+            $table->text('bio')->nullable()->after('password');
         });
     }
 

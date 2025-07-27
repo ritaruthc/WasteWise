@@ -14,8 +14,12 @@ class ModifyAvatarColumnInUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            // Change avatar column to BLOB
-            $table->binary('avatar')->nullable()->change();
+            // Drop the existing avatar column and recreate it as BLOB
+            $table->dropColumn('avatar');
+        });
+        
+        Schema::table('users', function (Blueprint $table) {
+            $table->binary('avatar')->nullable()->after('password');
         });
     }
 
@@ -27,8 +31,13 @@ class ModifyAvatarColumnInUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            // Revert avatar column back to VARCHAR(255)
-            $table->string('avatar', 255)->nullable()->change();
+            // Drop the binary avatar column
+            $table->dropColumn('avatar');
+        });
+        
+        Schema::table('users', function (Blueprint $table) {
+            // Recreate avatar column as VARCHAR(255)
+            $table->string('avatar', 255)->nullable()->after('password');
         });
     }
 }

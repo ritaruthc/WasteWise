@@ -14,7 +14,13 @@ class AddDefaultValueToMessageInNotificationsTable extends Migration
     public function up()
     {
         Schema::table('notifications', function (Blueprint $table) {
-            $table->text('message')->default('Ada notifikasi.')->change();
+            // First drop the existing TEXT column
+            $table->dropColumn('message');
+        });
+        
+        Schema::table('notifications', function (Blueprint $table) {
+            // Add it back as VARCHAR with default value
+            $table->string('message', 500)->default('Ada notifikasi.')->after('title');
         });
     }
 
@@ -26,7 +32,13 @@ class AddDefaultValueToMessageInNotificationsTable extends Migration
     public function down()
     {
         Schema::table('notifications', function (Blueprint $table) {
-            $table->text('message')->default(null)->change(); // Remove the default value if rolled back
+            // Drop the VARCHAR column
+            $table->dropColumn('message');
+        });
+        
+        Schema::table('notifications', function (Blueprint $table) {
+            // Add it back as TEXT without default value
+            $table->text('message')->after('title');
         });
     }
 }

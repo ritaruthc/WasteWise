@@ -14,8 +14,15 @@ class ChangePhotoColumnTypeInMaterialCategories extends Migration
      */
     public function up()
     {
-        // Use raw SQL to alter the column type to LONGBLOB
-        DB::statement('ALTER TABLE `material_categories` MODIFY `photo` LONGBLOB');
+        // Check if the photo column exists before trying to drop it
+        if (Schema::hasColumn('material_categories', 'photo')) {
+            Schema::table('material_categories', function (Blueprint $table) {
+                $table->dropColumn('photo');
+            });
+        }
+        
+        // Use raw SQL to create the LONGBLOB column
+        DB::statement('ALTER TABLE `material_categories` ADD `photo` LONGBLOB NULL');
     }
 
     /**
@@ -25,7 +32,14 @@ class ChangePhotoColumnTypeInMaterialCategories extends Migration
      */
     public function down()
     {
-        // Revert the column type back to TEXT or any previous type
-        DB::statement('ALTER TABLE `material_categories` MODIFY `photo` LONGTEXT');
+        Schema::table('material_categories', function (Blueprint $table) {
+            // Drop the LONGBLOB column
+            $table->dropColumn('photo');
+        });
+        
+        Schema::table('material_categories', function (Blueprint $table) {
+            // Add it back as LONGTEXT
+            $table->longText('photo')->nullable();
+        });
     }
 }
