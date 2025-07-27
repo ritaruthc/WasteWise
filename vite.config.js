@@ -8,9 +8,10 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    // Tambahkan atau pastikan bagian build ini mengarah ke 'dist'
+    // Hapus atau sesuaikan bagian build untuk gunakan default Laravel
     build: {
-        outDir: 'dist', // Ini adalah default Vite, pastikan tidak diubah
-        emptyOutDir: true, // Opsional: Bersihkan direktori sebelum build
+        outDir: 'public/build', // Sesuai default Laravel-Vite
+        emptyOutDir: true,
+        manifest: true, // Penting untuk auto-detection asset di Laravel
     }
 });
