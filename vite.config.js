@@ -8,4 +8,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    // Tambahkan atau pastikan bagian build ini mengarah ke 'dist'
+    build: {
+        outDir: 'dist', // Ini adalah default Vite, pastikan tidak diubah
+        emptyOutDir: true, // Opsional: Bersihkan direktori sebelum build
+    }
 });
