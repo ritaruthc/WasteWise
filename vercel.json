@@ -40,7 +40,7 @@
     "APP_NAME": "WasteWise",
     "APP_ENV": "production",
     "APP_KEY": "base64:nOhnrrQWoksg9OHe2VHDYavOpwg8IXmIgYPqZ+NVBg8=",
-    "APP_DEBUG": "false",
+    "APP_DEBUG": "true",
     "APP_URL": "https://waste-wise-psi.vercel.app",
     "VITE_APP_URL": "https://waste-wise-psi.vercel.app",
     "LOG_CHANNEL": "stderr",
