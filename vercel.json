@@ -3,60 +3,20 @@
   "builds": [
     {
       "src": "public/index.php",
-      "use": "vercel-php@0.6.0",
-      "config": {
-        "includeFiles": [
-          "public/**",
-          "bootstrap/cache/**",
-          "storage/framework/views/**",
-          "app/**",
-          "routes/**",
-          "vendor/**",
-          "public/model/json/**"
-        ]
-      }
+      "use": "@vercel/php"
     }
   ],
   "routes": [
     {
-      "src": "/(.*\\.(?:css|js|map|gif|png|jpg|jpeg|svg|webp|ico|json|txt|bin|pdf|woff|woff2|ttf|eot))",
-      "dest": "/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
+      "src": "/(css|js|images|storage|icon.png|favicon.ico)(.*)",
+      "dest": "/public/$1$2"
     },
     {
-      "src": "/(.*)",
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
       "dest": "/public/index.php"
     }
-  ],
-  "env": {
-    "APP_NAME": "WasteWise",
-    "APP_ENV": "production",
-    "APP_KEY": "base64:nOhnrrQWoksg9OHe2VHDYavOpwg8IXmIgYPqZ+NVBg8=",
-    "APP_DEBUG": "false",
-    "APP_URL": "https://waste-wise-tfa1.vercel.app",
-    "VITE_APP_URL": "https://waste-wise-tfa1.vercel.app",
-    "LOG_CHANNEL": "stderr",
-    "DB_CONNECTION": "mysql",
-    "DB_HOST": "gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
-    "DB_PORT": "4000",
-    "DB_DATABASE": "test",
-    "DB_USERNAME": "CCHFpdfAJdwXETr.root",
-    "DB_PASSWORD": "RFnjuu0g05nJJUCZ",
-    "SESSION_DRIVER": "database",
-    "SESSION_LIFETIME": "120",
-    "CACHE_DRIVER": "database",
-    "QUEUE_CONNECTION": "database",
-    "BROADCAST_DRIVER": "log",
-    "FILESYSTEM_DISK": "local",
-    "MAIL_MAILER": "log",
-    "APP_CONFIG_CACHE": "/tmp/config.php",
-    "APP_EVENTS_CACHE": "/tmp/events.php",
-    "APP_PACKAGES_CACHE": "/tmp/packages.php",
-    "APP_ROUTES_CACHE": "/tmp/routes.php",
-    "APP_SERVICES_CACHE": "/tmp/services.php",
-    "APP_STORAGE_PATH": "/tmp/storage",
-    "VIEW_COMPILED_PATH": "/tmp"
-  }
+  ]
 }
