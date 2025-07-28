@@ -33,7 +33,7 @@
                 @foreach($categories as $category)
                 <div class="col-md-6 mb-4">
                     <div class="card h-100">
-                        <img src="{{ asset('images/kategori/' . $category->slug . '.png') }}" class="card-img-top" alt="{{ $category->name }}" style="width: 100%; height: 200px; object-fit: cover;">
+                        <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/kategori/{{ $category->slug }}.png" class="card-img-top" alt="{{ $category->name }}" style="width: 100%; height: 200px; object-fit: cover;">
                         {{-- <img src="{{ $category->image_url }}" class="card-img-top" alt="{{ $category->name }}" style="width: 100%; height: 200px; object-fit: cover;"> --}}
                         {{-- <img src="{{ $category->image_url }}" class="card-img-top" alt="{{ $category->name }}"> --}}
                         <div class="card-body">

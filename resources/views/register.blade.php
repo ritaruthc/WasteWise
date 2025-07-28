@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Register')
+@section('title', 'PISAH - Register')
 
 @section('styles')
 <style>
@@ -68,7 +68,7 @@
     <div class="register-container bg-white p-5 rounded shadow-lg" style="width: 100%; max-width: 400px;">
         <div class="register-header text-center mb-4">
             <h2 class="text-success">Register</h2>
-            <p class="text-muted">Daftar WasteWise</p>
+            <p class="text-muted">Daftar PISAH</p>
         </div>
         <form class="register-form" method="POST" action="{{ route('register') }}">
             @csrf

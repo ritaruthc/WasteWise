@@ -214,7 +214,7 @@
         <section id="view-gif" class="py-5">
             <div class="container text-center">
                 <div class="gif-container">
-                    <img src="{{ asset('images/home/klas.gif') }}" alt="Dampak Klasifikasi Sampah"
+                    <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/home/klas.gif" alt="Dampak Klasifikasi Sampah"
                         class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
                 </div>
             </div>

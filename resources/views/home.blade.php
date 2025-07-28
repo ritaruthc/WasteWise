@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Beranda - Edukasi Pemilahan Sampah')
+@section('title', 'PISAH - Beranda Edukasi Pemilahan Sampah')
 
 @section('styles')
 <style>
@@ -58,7 +58,7 @@
         position: absolute;
         width: 50px;
         height: 50px;
-        background-image: url('{{ asset('images/home/leaf.png') }}');
+        background-image: url('https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/home/leaf.png');
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 1;
@@ -256,7 +256,7 @@
             <p>Bersama-sama, kita dapat menciptakan perubahan positif untuk lingkungan. Mari belajar memilah sampah dan berkontribusi pada masa depan yang lebih hijau!</p>
             <button onclick="window.location.href='{{ route('login') }}'" class="join-button">Gabung</button>
         </div>
-        <img src="images/home/model.png" alt="Recycle Bin" class="recycle-bin">
+        <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/home/model.png" alt="Recycle Bin" class="recycle-bin">
        
         <!-- Leaves around the header -->
         <div class="leaf" style="top: 10%; left: 5%;"></div>
@@ -408,7 +408,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <img src="{{ asset('images/logo.png') }}" alt="Tentang Kami" class="img-fluid rounded">
+                <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/logo.png" alt="Tentang Kami" class="img-fluid rounded">
             </div>
             <div class="col-md-6">
                 <h2 class="mb-4">Tentang Kami</h2>

@@ -38,7 +38,7 @@
 </head>
 <body>
     <video autoplay muted loop class="video-bg">
-        <source src="{{ asset('images/login/p.mp4') }}" type="video/mp4">
+        <source src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/login/p.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 

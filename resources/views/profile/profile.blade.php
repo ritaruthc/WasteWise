@@ -38,14 +38,9 @@
                                 @if (auth()->user()->avatar)
                                     <img src="{{ route('avatar.show', auth()->user()->id) }}" alt="{{ auth()->user()->name }}"
                                         class="rounded-circle me-2" width="150" height="150">
-                                @elseif(file_exists(public_path('images/user.png')))
-                                    <img src="{{ asset('images/user.png') }}" alt="{{ auth()->user()->name }}"
-                                        class="rounded-circle me-2" width="150" height="150">
                                 @else
-                                    <div class="rounded-circle me-2 bg-secondary d-flex justify-content-center align-items-center"
-                                        style="width: 150px; height: 150px;">
-                                        <span class="text-white">{{ substr(auth()->user()->name, 0, 1) }}</span>
-                                    </div>
+                                    <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/user.png" alt="{{ auth()->user()->name }}"
+                                        class="rounded-circle me-2" width="150" height="150">
                                 @endif
                                 <h2 class="mt-2">{{ $user->name }}</h2>
                                 <p>{{ $user->bio ?? 'No bio available' }}</p>

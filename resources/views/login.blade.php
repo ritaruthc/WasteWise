@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Login Page')
+@section('title', 'PISAH - Login')
 
 @section('styles')
 <style>
@@ -27,7 +27,7 @@
 
     .login-image {
         flex: 1;
-        background-image: url('{{ asset('images/login/bg1.png') }}');
+        background-image: url('https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/login/bg1.png');
         background-size: cover;
         background-position: center;
         min-height: 500px;
@@ -159,7 +159,7 @@
 <div class="login-container">
     <div class="login-form-container">
         <div class="login-header">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo">
+            <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/logo.png" alt="Logo">
             <h2>Selamat datang kembali!</h2>
             <p>Silahkan login untuk masuk</p>
         </div>

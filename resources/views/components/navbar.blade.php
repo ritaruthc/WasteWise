@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-        <img src="{{ asset('images/logo.png') }}" alt="WasteWise" width="32" height="32">
-        <a class="navbar-brand" href="{{ route('home') }}">WasteWise</a>
+        <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/logo.png" alt="PISAH" width="32" height="32">
+        <a class="navbar-brand" href="{{ route('home') }}">PISAH</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,11 +30,11 @@
                     <li class="nav-item me-2">
                         @if($unreadNotifications > 0)
                             <a href="{{ route('notifications.index') }}" class="nav-link position-relative">
-                                <img src="{{ asset('images/app/isNotif.png') }}" alt="Notification Icon" width="24" height="24">
+                                <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/app/isNotif.png" alt="Notification Icon" width="24" height="24">
                             </a>
                         @else
                             <a href="{{ route('notifications.index') }}" class="nav-link position-relative">
-                                <img src="{{ asset('images/app/noNotif.png') }}" alt="Notification Icon" width="24" height="24">
+                                <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/app/noNotif.png" alt="Notification Icon" width="24" height="24">
                             </a>
                         @endif
                     </li>
@@ -58,13 +58,7 @@
                             @if(auth()->user()->avatar)
                                 <img src="{{ route('avatar.show', auth()->user()->id) }}" alt="{{ auth()->user()->name }}" class="rounded-circle me-2" width="32" height="32">
                             @else
-                                @if(file_exists(public_path('images/user.png')))
-                                    <img src="{{ asset('images/user.png') }}" alt="{{ auth()->user()->name }}" class="rounded-circle me-2" width="32" height="32">
-                                @else
-                                    <div class="rounded-circle me-2 bg-secondary d-flex justify-content-center align-items-center" style="width: 32px; height: 32px;">
-                                        <span class="text-white">{{ substr(auth()->user()->name, 0, 1) }}</span>
-                                    </div> 
-                                @endif
+                                <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/user.png" alt="{{ auth()->user()->name }}" class="rounded-circle me-2" width="32" height="32">
                             @endif
                             {{ auth()->user()->name }}
                         </a>

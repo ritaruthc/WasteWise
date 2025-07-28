@@ -1,7 +1,7 @@
 <!-- resources/views/diskusi.blade.php -->
 @extends('layouts.app')
 
-@section('title', 'Forum Diskusi')
+@section('title', 'PISAH - Forum Diskusi')
 
 @section('styles')
 <style>
@@ -199,13 +199,7 @@
                                 @if($user->avatar)
                                     <img src="{{ route('avatar.show', $user->id) }}" alt="{{ $user->name }}" class="rounded-circle me-2" width="40" height="40">
                                 @else
-                                    @if(file_exists(public_path('images/user.png')))
-                                        <img src="{{ asset('images/user.png') }}" alt="{{ $user->name }}" class="rounded-circle me-2" width="40" height="40">
-                                    @else
-                                        <div class="rounded-circle me-2 bg-secondary d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
-                                            <span class="text-white">{{ substr($user->name, 0, 1) }}</span>
-                                        </div> 
-                                    @endif
+                                    <img src="https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/user.png" alt="{{ $user->name }}" class="rounded-circle me-2" width="40" height="40">
                                 @endif
                                 <span>{{ $user->name }} - {{ $user->points }} Point</span>
                             </div>

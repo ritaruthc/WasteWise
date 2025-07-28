@@ -14,7 +14,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{{ $admin->avatar ? asset('storage/'.$admin->avatar) : asset('images/default-avatar.png') }}" 
+                    <img src="{{ $admin->avatar ? asset('storage/'.$admin->avatar) : 'https://raw.githubusercontent.com/ritaruthc/WasteWise/main/public/images/user.png' }}" 
                          alt="{{ $admin->name }}" class="img-fluid rounded-circle mb-3">
                 </div>
                 <div class="col-md-8">

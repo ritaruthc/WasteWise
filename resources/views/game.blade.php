@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Game Pemilahan Sampah')
+@section('title', 'PISAH - Game Pemilahan Sampah')
 
 @section('styles')
 <style>
