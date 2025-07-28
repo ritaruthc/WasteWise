@@ -252,7 +252,7 @@
 <header class="jumbotron" id="beranda">
     <div class="gradient" id="parallax-container" style="background: #114B5F;">
         <div class="content">
-            <h1>Selamatkan Bumi<br>Kelola sampah kita</h1>
+            <h1>Seamatkan Bumi<br>Kelola sampah kita</h1>
             <p>Bersama-sama, kita dapat menciptakan perubahan positif untuk lingkungan. Mari belajar memilah sampah dan berkontribusi pada masa depan yang lebih hijau!</p>
             <button onclick="window.location.href='{{ route('login') }}'" class="join-button">Gabung</button>
         </div>
