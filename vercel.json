@@ -11,7 +11,8 @@
           "storage/framework/views/**",
           "app/**",
           "routes/**",
-          "vendor/**"
+          "vendor/**",
+          "public/model/json/**"
         ]
       }
     }
@@ -29,7 +30,21 @@
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       },
-      "continue": true
+      "dest": "/public/build/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/public/images/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*\\.(?:css|js|map|gif|png|jpg|jpeg|svg|webp|ico|json|txt))",
+      "dest": "/public/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
     },
     {
       "src": "/(.*)",
@@ -41,8 +56,8 @@
     "APP_ENV": "production",
     "APP_KEY": "base64:nOhnrrQWoksg9OHe2VHDYavOpwg8IXmIgYPqZ+NVBg8=",
     "APP_DEBUG": "true",
-    "APP_URL": "https://waste-wise-psi.vercel.app",
-    "VITE_APP_URL": "https://waste-wise-psi.vercel.app",
+    "APP_URL": "https://waste-wise-7i4k.vercel.app",
+    "VITE_APP_URL": "https://waste-wise-7i4k.vercel.app",
     "LOG_CHANNEL": "stderr",
     "DB_CONNECTION": "mysql",
     "DB_HOST": "gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
