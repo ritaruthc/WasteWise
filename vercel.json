@@ -23,25 +23,25 @@
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       },
-      "dest": "/public/build/$1"
+      "dest": "/build/$1"
     },
     {
       "src": "/images/(.*)",
-      "dest": "/public/images/$1",
+      "dest": "/images/$1",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
     {
       "src": "/model/(.*)",
-      "dest": "/public/model/$1",
+      "dest": "/model/$1",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
     {
-      "src": "/(.*\\.(?:css|js|map|gif|png|jpg|jpeg|svg|webp|ico|json|txt|bin))",
-      "dest": "/public/$1",
+      "src": "/(.*\\.(?:css|js|map|gif|png|jpg|jpeg|svg|webp|ico|json|txt|bin|pdf|woff|woff2|ttf|eot))",
+      "dest": "/$1",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
@@ -62,7 +62,7 @@
     "APP_NAME": "WasteWise",
     "APP_ENV": "production",
     "APP_KEY": "base64:nOhnrrQWoksg9OHe2VHDYavOpwg8IXmIgYPqZ+NVBg8=",
-    "APP_DEBUG": "true",
+    "APP_DEBUG": "false",
     "APP_URL": "https://waste-wise-tfa1.vercel.app",
     "VITE_APP_URL": "https://waste-wise-tfa1.vercel.app",
     "LOG_CHANNEL": "stderr",
