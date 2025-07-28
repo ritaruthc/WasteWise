@@ -1,7 +1,6 @@
-
 <?php
+
 use Illuminate\Support\Str;
-use PDO; // <<< Pastikan Anda menambahkan ini di bagian atas file
 
 return [
 
@@ -28,6 +27,9 @@ return [
     | An example configuration is provided for each database system which
     | is supported by Laravel. You're free to add / remove connections.
     |
+    | Note: 'laravel' is used as a placeholder database name in default configurations.
+    |       Make sure to set DB_DATABASE in your .env or Vercel environment variables.
+    |
     */
 
     'connections' => [
@@ -45,7 +47,7 @@ return [
             'url' => env('DB_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'laravel'),
+            'database' => env('DB_DATABASE', 'laravel'), // Pastikan ini sesuai dengan DB_DATABASE di Vercel Anda (misal: 'test')
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
@@ -56,18 +58,18 @@ return [
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
-                // Pastikan Anda menambahkan `use PDO;` di bagian atas file
+                // LOGIKA KRUSIAL UNTUK SSL CA DI VERCEL
                 PDO::MYSQL_ATTR_SSL_CA => (
                     isset($_ENV['MYSQL_ATTR_SSL_CA_BASE64']) && !empty($_ENV['MYSQL_ATTR_SSL_CA_BASE64'])
                 ) ? call_user_func(function () {
                     $caPath = '/tmp/ca-cert.pem'; // Lokasi sementara yang bisa ditulis di Vercel
-                    // Cek jika file belum ada atau kosong sebelum menulis
+                    // Cek jika file belum ada atau kosong sebelum menulis (untuk efisiensi)
                     if (!file_exists($caPath) || filesize($caPath) == 0) {
                         file_put_contents($caPath, base64_decode($_ENV['MYSQL_ATTR_SSL_CA_BASE64']));
                     }
                     return $caPath;
-                }) : env('MYSQL_ATTR_SSL_CA'),
-                // Baris ini opsional, tambahkan jika Anda ingin kontrol eksplisit untuk verifikasi sertifikat server
+                }) : null, // Jika variabel Base64 tidak ada, set ke null
+                // Baris ini opsional: verifikasi sertifikat server (biasanya true untuk keamanan)
                 PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => env('DB_SSL_VERIFY_SERVER_CERT', true),
             ]) : [],
         ],
