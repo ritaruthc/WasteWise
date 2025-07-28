@@ -19,13 +19,6 @@
   ],
   "routes": [
     {
-      "src": "/storage/(.*)",
-      "status": 404,
-      "headers": {
-        "Cache-Control": "no-store"
-      }
-    },
-    {
       "src": "/build/(.*)",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
@@ -54,6 +47,13 @@
       }
     },
     {
+      "src": "/storage/(.*)",
+      "status": 404,
+      "headers": {
+        "Cache-Control": "no-store"
+      }
+    },
+    {
       "src": "/(.*)",
       "dest": "/public/index.php"
     }
@@ -63,8 +63,8 @@
     "APP_ENV": "production",
     "APP_KEY": "base64:nOhnrrQWoksg9OHe2VHDYavOpwg8IXmIgYPqZ+NVBg8=",
     "APP_DEBUG": "true",
-    "APP_URL": "https://waste-wise-7i4k.vercel.app",
-    "VITE_APP_URL": "https://waste-wise-7i4k.vercel.app",
+    "APP_URL": "https://waste-wise-tfa1.vercel.app",
+    "VITE_APP_URL": "https://waste-wise-tfa1.vercel.app",
     "LOG_CHANNEL": "stderr",
     "DB_CONNECTION": "mysql",
     "DB_HOST": "gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
