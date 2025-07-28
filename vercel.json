@@ -19,38 +19,10 @@
   ],
   "routes": [
     {
-      "src": "/build/(.*)",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      },
-      "dest": "/build/$1"
-    },
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/model/(.*)",
-      "dest": "/model/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
       "src": "/(.*\\.(?:css|js|map|gif|png|jpg|jpeg|svg|webp|ico|json|txt|bin|pdf|woff|woff2|ttf|eot))",
       "dest": "/$1",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/storage/(.*)",
-      "status": 404,
-      "headers": {
-        "Cache-Control": "no-store"
       }
     },
     {
